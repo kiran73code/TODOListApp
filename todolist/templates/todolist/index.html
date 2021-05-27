@@ -52,13 +52,15 @@
 
 
 					<ul class="list-group t20">
-
-                        {% for todolist in todo_items %}
-                        <li class="list-group-item"> {{todolist.text}} </li>
+						{% for todolist in todo_items %}
+						{% if todolist.completed %}
+						
+                        <li class="list-group-item todo-completed"> {{todolist.text}} </li>
+						{%else %}
+						 <a herf="#"> <li class="list-group-item"> {{todolist.text}} </li>
+						 {%endif%}
 						{% endfor %}
-						<li class="list-group-item">Learn something new.</li>
-						<li class="list-group-item todo-completed">Buy a new Book</li>
-						<li class="list-group-item">Complete Machine Learning Course.</li>
+						
 					</ul>
 				</div>
 			</div>
